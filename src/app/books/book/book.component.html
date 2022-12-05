@@ -1,0 +1,14 @@
+<li class="bg-white rounded-md ring-2 ring-cyan-500">
+  <img
+    class="object-fill w-full h-[350px] rounded-md"
+    src="{{ book.image }}"
+    alt=""
+  />
+  <div class="px-2">
+    <h4 class="text-xl font-semibold">{{ book.name }}</h4>
+    <p class="">{{ book.author }}</p>
+    <p class="font-bold">{{ book.price | currency }}</p>
+    <button *ngIf="!isAdded" (click)="handleCart()" class="bg-lime-600 text-white font-semibold py-1 px-2 rounded-md my-2  hover:bg-lime-400 hover:text-black">Add to Cart</button>
+    <button *ngIf="isAdded" (click)="handleRemove()" class="bg-lime-600 text-white font-semibold py-1 px-2 rounded-md my-2  hover:bg-lime-400 hover:text-black">Remove from Cart</button>
+  </div>
+</li>

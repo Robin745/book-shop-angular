@@ -1,0 +1,7 @@
+<h1>Welcome to Cart Component</h1>
+<div *ngIf="getCart().length> 0">
+    <ng-container *ngFor="let book of getCart()">
+        <p>{{book.name}}</p>
+    </ng-container>
+</div>
+<div *ngIf="getCart().length == 0">Add some items to cart</div>

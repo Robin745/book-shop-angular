@@ -1,0 +1,22 @@
+<div class="w-full bg-gray-200">
+  <div class="flex flex-col mx-10">
+    <h2 class="text-2xl py-4">Welcome to Book Shop</h2>
+    <input class="border-2 rounded-md py-1 px-2" type="text" placeholder="search text"/>
+    <!-- <div>
+      <h4 class="border-2">{{ searchText }}</h4>
+    </div> -->
+  </div>
+  <div class="mx-10">
+    <ng-container  *ngIf="isShowing">
+      <button (click)="isShowing = !isShowing" class="bg-cyan-500 py-1 px-2 rounded-md my-2 hover:bg-cyan-400">Hide Books</button>
+    </ng-container>
+    <ng-container *ngIf="!isShowing">
+      <button (click)="isShowing = !isShowing" class="bg-cyan-500 py-1 px-2 rounded-md my-2  hover:bg-cyan-400">Show Books</button>
+    </ng-container>
+  </div>
+  <ul *ngIf="isShowing" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 w-10/12 mx-auto">
+    <ng-container  *ngFor="let singleBook of books; let i = index">
+      <app-book [book]="singleBook"></app-book>
+    </ng-container>
+  </ul>
+</div>
